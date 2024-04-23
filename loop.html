@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LOOP</title>
+</head>
+<body>
+    <div id="display"></div>
+    <script type="text/javascript">
+        var printArray="";
+        var tweet =["Good morning","Take a coffee","Back to home"];
+
+        for (var i=0;i<tweet.length;i++){
+            //alert(tweet[i]);
+            printArray=printArray+ "<p>" +tweet[i] + "</p>";
+        }
+        document.getElementById("display").innerHTML=printArray;
+    </script>
+</body>
+</html>

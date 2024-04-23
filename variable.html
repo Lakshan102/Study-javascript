@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>variable</title>
+</head>
+<body>
+    <input type="text" id="inputtext">
+    <button id="textchange" >update</button>
+
+    <p id="inputp"> before change text</p>
+
+    <script type="text/javascript">
+        document.getElementById("textchange").onclick=function () {
+
+
+            var textEntered = "";
+            textEntered = document.getElementById("inputtext").value;
+            document.getElementById("inputp").innerHTML = textEntered  + document.getElementById("inputp").innerHTML;
+
+        }
+    </script>
+</body>
+</html>

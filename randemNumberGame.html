@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RNG</title>
+</head>
+<body>
+    <p>What is the number ,I am thinking now?</p>
+    <p>***Number between 1-10***</p>
+    <p><input id="inputNumber" type="text" placeholder="enter number"><button id="guess" type="submit">Guess</button> </p>
+
+    <script type="text/javascript">
+        document.getElementById("guess").onclick=function(){
+            var randomNumber=Math.random();
+            randomNumber=randomNumber*11;
+            randomNumber=Math.floor(randomNumber);
+                //me step 3ma **Math.floor(Math.random() * 11)** meka yodala karanna puluwan
+            if (document.getElementById("inputNumber").value==randomNumber){
+                alert("Well done..!! Guessing Number is "+randomNumber);
+            }
+            else{
+                alert("you fail.Try again..!! "+randomNumber);
+            }
+        }
+    </script>
+</body>
+</html>

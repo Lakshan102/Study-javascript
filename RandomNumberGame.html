@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RNG2</title>
+</head>
+<body>
+    <p>Enter your Guessing Number</p>
+    <p>***Number between 1-10***</p>
+    <p>
+        <input id="guessNumber" type="text" placeholder="Enter Number">
+        <button id="guess" type="submit">Guess</button>
+    </p>
+
+    <script type="text/javascript">
+        document.getElementById("guess").onclick=function (){
+
+            var numberOfGuess=document.getElementById("guessNumber").value;
+            var countOfGesses=1;
+            var gotIt=false;
+
+            while(gotIt==false){
+
+                var randomNumber =Math.floor(Math.random() * 11);
+
+                if(numberOfGuess==randomNumber){
+                    gotIt=true;
+                    alert("Got it, your number is " + numberOfGuess + " It took me " + countOfGesses + " guesses");
+                    break;
+                }
+                else{
+                    countOfGesses++;
+                }
+            }
+        }
+    </script>
+</body>
+</html>

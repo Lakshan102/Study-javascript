@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>miniGame</title>
+
+    <style type="text/css">
+        #shape{
+            border: black solid;
+            position:relative ;
+        }
+        h1{
+            height: 40px;
+            background-color: red;
+        }
+        h3{
+            height: 30px;
+            background-color: lightblue;
+        }
+        p{
+            height: 20px;
+            width:150px;
+            background-color: yellow;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center">Hey Get Quick</h1>
+    <h3 style="text-align: center">Click to see well</h3>
+    <p><b>You Get <span id="time" ></span></b></p>
+
+    <div id="shape"></div>
+
+
+
+
+    <script type="text/javascript">
+
+        var start=new Date().getTime();
+
+        function getRandomColor(){
+            var colorCode ='0123456789ABCDEF';
+            var color ='#';
+
+            for(var i=0;i<6;i++){
+                color+= colorCode[Math.floor(Math.random()*16)];
+            }
+            return color;
+        }
+        function shapeAppear(){
+            var top_left=Math.random()*500;
+            var width_height =Math.random()*150;
+
+            if(Math.random()>0.5){
+                document.getElementById("shape").style.borderRadius="50px";
+            }
+            else{
+                document.getElementById("shape").style.borderRadius="0px";
+            }
+
+            document.getElementById("shape").style.width=width_height+"px";
+            document.getElementById("shape").style.height=width_height+"px";
+            document.getElementById("shape").style.top=top_left+ "px";
+            document.getElementById("shape").style.left=top_left+"px";
+            document.getElementById("shape").style.backgroundColor=getRandomColor();
+            document.getElementById("shape").style.display="block";
+
+
+
+            start=new Date().getTime();
+
+        }
+
+        function shapeAppearDelay(){
+            setTimeout(shapeAppear,Math.random()*1000);
+        }
+
+        shapeAppearDelay();
+        document.getElementById("shape").onclick=function (){
+            document.getElementById("shape").style.display="none";
+
+            var end=new Date().getTime();
+            var time=(end - start)/1000;
+            document.getElementById("time").innerHTML=time + " s";
+
+            shapeAppearDelay();
+        }
+    </script>
+
+</body>
+</html>

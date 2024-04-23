@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>while</title>
+</head>
+<body>
+    <p id="displayArray"></p>
+
+    <script type="text/javascript">
+        var textDisplay="";
+        var tweet=["Good morning","Take a coffee","Back to home"];
+        var i=0;
+
+        while(i<tweet.length){
+            textDisplay=textDisplay+ "<p>" + tweet[i] + "</p>" ;
+
+            i++;
+        }
+
+        document.getElementById("displayArray").innerHTML/*monawahari display karaganna **innerHTML** yodagannawa*/=textDisplay;
+    </script>
+</body>
+</html>
